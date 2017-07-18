@@ -9,16 +9,11 @@
     :license: BSD, see LICENSE for details.
 """
 
-from six import PY3
-from typing import Callable, Dict, List, Tuple
+from typing import Callable, Dict, List, Tuple, Text
 
 from docutils import nodes
 from docutils.parsers.rst.states import Inliner
 
-
-if PY3:
-    unicode = str
-
 # common role functions
-RoleFunction = Callable[[unicode, unicode, unicode, int, Inliner, Dict, List[unicode]],
+RoleFunction = Callable[[Text, Text, Text, int, Inliner, Dict, List[Text]],
                         Tuple[List[nodes.Node], List[nodes.Node]]]
